@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({super.key});
@@ -25,109 +23,115 @@ class _SignUpPageState extends State<SignUpPage> {
         centerTitle: true,
         backgroundColor: Colors.deepPurple,
       ),
-      body: Center(
-        child: Container(
-          width: 500,
-          height: 450,
-          child: Column(
-            children: [
-              const Text(
-                "SIGN UP",
-                style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 15,
-                    fontWeight: FontWeight.bold),
-                textAlign: TextAlign.center,
-              ),
-              Form(
-                key: _formKey,
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          top: 10, bottom: 10, left: 10, right: 10),
-                      child: TextFormField(
-                        decoration: const InputDecoration(
-                          hintText: "FirstName",
-                          labelText: "First Name:",
-                          //errorText: "Please enter your first name",
-                          //errorStyle: TextStyle(color: Colors.red),
-                          //suffixIcon: Icon(Icons.remove_red_eye_outlined),
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
+      body: Padding(
+        padding: const EdgeInsets.only(left: 30,right: 30,top: 10,bottom: 10),
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.only(top: 10),
+            child: Column(
+              children: [
+                const Text(
+                  "SIGN UP",
+                  style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.center,
+                ),
+                Form(
+                  key: _formKey,
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 10, bottom: 10, left: 10, right: 10),
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            hintText: "Enter FirstName",
+                            labelText: "First Name:",
+                            //errorText: "Please enter your first name",
+                            //errorStyle: TextStyle(color: Colors.red),
+                            //suffixIcon: Icon(Icons.remove_red_eye_outlined),
+                            focusedBorder: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                          ),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "FirstName can't be empty";
+                            }
+                          },
                         ),
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return "FirstName can't be empty";
-                          }
-                        },
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          top: 10, bottom: 10, left: 10, right: 10),
-                      child: TextFormField(
-                        decoration: const InputDecoration(
-                          hintText: "LastName",
-                          labelText: "Last Name:",
-                          //errorText: "Please enter your last name",
-                          //errorStyle: TextStyle(color: Colors.red),
-                          //suffixIcon: Icon(Icons.remove_red_eye_outlined),
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 10, bottom: 10, left: 10, right: 10),
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            hintText: "Enter LastName",
+                            labelText: "Last Name:",
+                            //errorText: "Please enter your last name",
+                            //errorStyle: TextStyle(color: Colors.red),
+                            //suffixIcon: Icon(Icons.remove_red_eye_outlined),
+                            focusedBorder: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                          ),
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "LastName can't be empty";
+                            }
+                          },
                         ),
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return "LastName can't be empty";
-                          }
-                        },
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          top: 10, bottom: 10, left: 10, right: 10),
-                      child: TextFormField(
-                        decoration: const InputDecoration(
-                          hintText: "Email",
-                          labelText: "Email:",
-                          //errorText: "Please enter your first name",
-                          //errorStyle: TextStyle(color: Colors.red),
-                          //suffixIcon: Icon(Icons.remove_red_eye_outlined),
-                          focusedBorder: OutlineInputBorder(
-                              borderRadius:
-                                  BorderRadius.all(Radius.circular(10))),
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 10, bottom: 10, left: 10, right: 10),
+                        child: TextFormField(
+                          decoration: const InputDecoration(
+                            hintText: "Enter Email",
+                            labelText: "Email:",
+                            //errorText: "Please enter your first name",
+                            //errorStyle: TextStyle(color: Colors.red),
+                            //suffixIcon: Icon(Icons.remove_red_eye_outlined),
+                            focusedBorder: OutlineInputBorder(
+                                borderRadius:
+                                    BorderRadius.all(Radius.circular(10))),
+                          ),
+                          controller: _emailController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Please Enter Email";
+                            } else if (!RegExp(
+                                    r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
+                                .hasMatch(value)) {
+                              return "Please Enter a Valid Email";
+                            }
+                          },
                         ),
-                        controller: _emailController,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return "Please Enter Email";
-                          } else if (!RegExp(
-                                  r'^.+@[a-zA-Z]+\.{1}[a-zA-Z]+(\.{0,1}[a-zA-Z]+)$')
-                              .hasMatch(value)) {
-                            return "Please Enter a Valid Email";
-                          }
-                        },
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          top: 20, bottom: 10, left: 10, right: 10),
-                      child: TextFormField(
-                        obscureText: !_isPasswordVisible,
-                        controller: _passwordController,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return "Please Enter Password";
-                          } else if (!RegExp(
-                                  r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
-                              .hasMatch(value)) {
-                            return "Please Enter a Valid Password";
-                          }
-                        },
-                        decoration: InputDecoration(
-                            hintText: "Password",
+                      Padding(
+                        padding: const EdgeInsets.only(
+                            top: 20, bottom: 10, left: 10, right: 10),
+                        child: TextFormField(
+                          obscureText: !_isPasswordVisible,
+                          controller: _passwordController,
+                          validator: (value) {
+                            if (value!.isEmpty) {
+                              return "Please Enter Password";
+                            } else if (!RegExp(
+                                    r'^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[!@#\$&*~]).{8,}$')
+                                .hasMatch(value)) {
+                              showAlert("""Please Enter valid Password with
+                                                Minimum one UppercaseCharacter
+                                                Minimum one specialCharacter
+                                                Minimum length of 8 Characters
+                                                Minimum one lowerCaseCharacter""");
+                              return "Please Enter a Valid Password";
+                            }
+                          },
+                          decoration: InputDecoration(
+                            hintText: "Enter Password",
                             labelText: "Password:",
                             //errorText: "Please enter your first name",
                             //errorStyle: TextStyle(color: Colors.red),
@@ -136,64 +140,63 @@ class _SignUpPageState extends State<SignUpPage> {
                                 borderRadius:
                                     BorderRadius.all(Radius.circular(10))),
                             suffixIcon: IconButton(
-                                onPressed: () {
-                                  setState(() {
-                                    _isPasswordVisible = !_isPasswordVisible;
-                                  });
-                                },
-                                icon: Icon(
-                                  _isPasswordVisible
-                                      ? Icons.visibility
-                                      : Icons.visibility_off,
-                                  color: Theme.of(context).primaryColor,
-                                ))
-
-                            /* suffixIcon: GestureDetector(
-                            onTap: () {
-                              setState(() {
-                                _isPasswordVisible = !_isPasswordVisible;
-                              });
-                            },
-                        ), */
-
-                            /* suffixIcon: IconButton(
-                            icon: Icon(
-                              // Based on passwordVisible state choose the icon
-                              _passwordVisible
-                                  ? Icons.visibility
-                                  : Icons.visibility_off,
-                              color: Theme.of(context).primaryColorDark,
+                              onPressed: () {
+                                setState(() {
+                                  _isPasswordVisible = !_isPasswordVisible;
+                                });
+                              },
+                              icon: Icon(
+                                _isPasswordVisible
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
+                                color: Theme.of(context).primaryColor,
+                              ),
                             ),
-                            onPressed: () {
-                              // Update the state i.e. toogle the state of passwordVisible variable
-                              setState(() {
-                                _passwordVisible = !_passwordVisible;
-                              });
-                            },
-                          ), */
-                            ),
+                          ),
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 20),
-                      child: Container(
-                        color: Colors.blue,
-                        child: TextButton(
-                            onPressed: () {
-                              if (_formKey.currentState!.validate()) {}
-                            },
-                            child: const Text(
-                                style: TextStyle(color: Colors.white),
-                                "Sign Up")),
-                      ),
-                    )
-                  ],
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: Container(
+                          color: Colors.blue,
+                          child: TextButton(
+                              onPressed: () {
+                                if (_formKey.currentState!.validate()) {}
+                              },
+                              child: const Text(
+                                  style: TextStyle(color: Colors.white),
+                                  "Sign Up")),
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
     );
+  }
+
+  showAlert(String message) {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text(message),
+            actions: [
+              Container(
+                color: Colors.blueAccent,
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text('OK'),
+                ),
+              ),
+            ],
+          );
+        });
   }
 }
