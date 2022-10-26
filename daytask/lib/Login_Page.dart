@@ -26,22 +26,25 @@ class _LoginPageState extends State<LoginPage> {
             child: TextField(
               cursorColor: Colors.red,
               maxLength: 10,
-              decoration: InputDecoration(hintText: ('Enter 10 characters and cursor is red TF1')),
+              decoration: InputDecoration(
+                  hintText: ('Enter 10 characters and cursor is red TF1')),
             ),
           ),
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
             child: TextField(
-              decoration: InputDecoration(hintText: ('Input only numbers(AADHAR NUMBER)& TextField2')),
-               keyboardType: TextInputType.number,
-               maxLength: 12,
+              decoration: InputDecoration(
+                  hintText: ('Input only numbers(AADHAR NUMBER)& TF2')),
+              keyboardType: TextInputType.number,
+              maxLength: 12,
               controller: _numberController,
             ),
           ),
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
-              decoration: InputDecoration(hintText: ('Textfield3 with maxLine:3')),
+              decoration:
+                  InputDecoration(hintText: ('Textfield3 with maxLine:3')),
               maxLines: 3,
             ),
           ),
@@ -51,7 +54,7 @@ class _LoginPageState extends State<LoginPage> {
               decoration: InputDecoration(
                 hintText: ('Setting Border with color'),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(width: 3, color: Colors.greenAccent),
+                  borderSide: BorderSide(width: 3, color: Colors.black),
                 ),
               ),
             ),
