@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:screen_navigation/getstart1.dart';
-import 'package:screen_navigation/login2.dart';
+import 'package:screen_navigation/AppRoutes/app_routes.dart';
 
 class ForgotPasswordPage extends StatefulWidget {
   const ForgotPasswordPage({super.key});
@@ -24,21 +21,17 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         ),
         centerTitle: true,
       ),
-      body:Padding(
-            padding:
-                const EdgeInsets.only(top: 20, bottom: 5, left: 10, right: 10),
-            child: Container(
-              color: Colors.blue,
-              child: TextButton(
-                  onPressed: () {
-                    Navigator.of(context).popUntil((route) => route.isFirst);
-                  },
-                  child: const Text(
-                    
-                      style: TextStyle(color: Colors.white),
-                      "Go to Screen1")),
-            ),
-          ),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 20, bottom: 5, left: 10, right: 10),
+        child: ElevatedButton(
+            onPressed: () {
+              //Navigator.of(context).popUntil((route) => route.isFirst);
+              Navigator.popUntil(
+                  context, ModalRoute.withName(AppRoutes.getstart));
+            },
+            child: const Text(
+                style: TextStyle(color: Colors.white), "Go to Screen1")),
+      ),
     );
   }
 }

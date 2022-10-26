@@ -28,17 +28,14 @@ class _OtpScreenState extends State<OtpScreen> {
           Padding(
             padding:
                 const EdgeInsets.only(top: 20, bottom: 5, left: 10, right: 10),
-            child: Container(
-              color: Colors.blue,
-              child: TextButton(
-                  onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: ((context) => const DashBoardPage())));
-                  },
-                  child: const Text(
-                      style: TextStyle(color: Colors.white),
-                      "Dashboard Screen7")),
-            ),
+            child: ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).push(MaterialPageRoute(
+                      builder: ((context) => const DashBoardPage())));
+                },
+                child: const Text(
+                    style: TextStyle(color: Colors.white),
+                    "Dashboard Screen7")),
           ),
         ],
         ),

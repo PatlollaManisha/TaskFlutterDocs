@@ -166,50 +166,41 @@ class _SignUpPageState extends State<SignUpPage> {
                       ),
                       Padding(
                         padding: const EdgeInsets.only(top: 20),
-                        child: Container(
-                          color: Colors.blue,
-                          child: TextButton(
-                              onPressed: () {
-                                if (_formKey.currentState!.validate()) {
-                                  //Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ProfilePage(),));
-                                  Navigator.pushNamed(context,AppRoutes.profile,arguments: [_firstNameController.text,_lastNameController.text]);
-                                }
-                              },
-                              child: const Text(
-                                  style: TextStyle(color: Colors.white),
-                                  "Sign Up")),
-                        ),
+                        child: ElevatedButton(
+                            onPressed: () {
+                              if (_formKey.currentState!.validate()) {
+                                //Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ProfilePage(),));
+                                Navigator.pushNamed(context,AppRoutes.profile,arguments: [_firstNameController.text,_lastNameController.text]);
+                              }
+                            },
+                            child: const Text(
+                                style: TextStyle(color: Colors.white),
+                                "Sign Up")),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
                             top: 20, bottom: 5, left: 10, right: 10),
-                        child: Container(
-                          color: Colors.blue,
-                          child: TextButton(
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: ((context) => const OtpScreen())));
-                              },
-                              child: const Text(
-                                  style: TextStyle(color: Colors.white),
-                                  "Otp Screen6")),
-                        ),
+                        child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: ((context) => const OtpScreen())));
+                            },
+                            child: const Text(
+                                style: TextStyle(color: Colors.white),
+                                "Otp Screen6")),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(
                             top: 20, bottom: 5, left: 10, right: 10),
-                        child: Container(
-                          color: Colors.blue,
-                          child: TextButton(
-                              onPressed: () {
-                                Navigator.of(context).push(MaterialPageRoute(
-                                    builder: ((context) =>
-                                        const ForgotPasswordPage())));
-                              },
-                              child: const Text(
-                                  style: TextStyle(color: Colors.white),
-                                  "ForgotPassword Screen4")),
-                        ),
+                        child: ElevatedButton(
+                            onPressed: () {
+                              Navigator.of(context).push(MaterialPageRoute(
+                                  builder: ((context) =>
+                                      const ForgotPasswordPage())));
+                            },
+                            child: const Text(
+                                style: TextStyle(color: Colors.white),
+                                "ForgotPassword Screen4")),
                       ),
                     ],
                   ),
@@ -229,14 +220,11 @@ class _SignUpPageState extends State<SignUpPage> {
           return AlertDialog(
             title: Text(message),
             actions: [
-              Container(
-                color: Colors.blueAccent,
-                child: TextButton(
-                  onPressed: () {
-                    Navigator.pop(context);
-                  },
-                  child: const Text('OK'),
-                ),
+              ElevatedButton(
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+                child: const Text('OK'),
               ),
             ],
           );

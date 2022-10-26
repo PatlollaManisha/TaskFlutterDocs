@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:screen_navigation/AppRoutes/app_routes.dart';
-import 'package:screen_navigation/signup3.dart';
-import 'AppRoutes/app_pages.dart';
 
 class DashBoardPage extends StatefulWidget {
   const DashBoardPage({super.key});
@@ -28,16 +26,13 @@ class _DashBoardPageState extends State<DashBoardPage> {
           Padding(
             padding:
                 const EdgeInsets.only(top: 20, bottom: 5, left: 10, right: 10),
-            child: Container(
-              color: Colors.blue,
-              child: TextButton(
-                  onPressed: () {
-                    Navigator.of(context).popAndPushNamed(AppRoutes.signup);
-                  },
-                  child: const Text(
-                      style: TextStyle(color: Colors.white),
-                      "SignUp Screen3")),
-            ),
+            child: ElevatedButton(
+                onPressed: () {
+                  Navigator.of(context).popAndPushNamed(AppRoutes.signup);
+                  //Navigator.popUntil(context, ModalRoute.withName(AppRoutes.signup));
+                },
+                child: const Text(
+                    style: TextStyle(color: Colors.white), "SignUp Screen3")),
           ),
         ],
       ),

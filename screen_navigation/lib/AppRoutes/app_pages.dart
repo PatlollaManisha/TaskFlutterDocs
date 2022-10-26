@@ -5,6 +5,7 @@ import 'package:screen_navigation/dashboard7.dart';
 import 'package:screen_navigation/getstart1.dart';
 import 'package:screen_navigation/login2.dart';
 import 'package:screen_navigation/profile9.dart';
+import 'package:screen_navigation/settings8.dart';
 import 'package:screen_navigation/signup3.dart';
 
 
@@ -16,6 +17,7 @@ class AppPages {
       AppRoutes.signup: ((context) => const SignUpPage()),
       AppRoutes.dashboard: ((context) => const DashBoardPage()),
       AppRoutes.profile: ((context) => const ProfilePage()),
+      AppRoutes.settings: ((context) => const SettingsPage()),
     };
   }
 }

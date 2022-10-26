@@ -81,14 +81,11 @@ class _LogInPageState extends State<LogInPage> {
         ),
         Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Container(
-            color: Colors.blue,
-            child: TextButton(
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              child: const Text(style: TextStyle(color: Colors.white), 'Back'),
-            ),
+          child: ElevatedButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Text(style: TextStyle(color: Colors.white), 'Back'),
           ),
         ),
       ]),
