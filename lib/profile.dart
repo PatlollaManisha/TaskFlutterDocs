@@ -34,13 +34,13 @@ class _ProfileDetailsState extends State<ProfileDetails> {
                         "https://cdn-icons-png.flaticon.com/512/3135/3135823.png"),
                   ),
                 ),
-                Details("First Name :", jsonDetails["firstName"]),
-                Details("Last Name :", jsonDetails["lastName"]),
-                Details("Email :", jsonDetails["Email"]),
-                Details("Date of Birth :", jsonDetails["dateOfBirth"]),
-                Details("Gender :", jsonDetails["gender"]),
-                Details("Employee_Id :", jsonDetails["EmployeeId"]),
-                Details("Designation :", jsonDetails["Designation"]),
+                Details("First Name :", "teju"),
+                Details("Last Name :", jsonDetails["lastName"] ?? ""),
+                // Details("Email :", jsonDetails["Email"]?? ""),
+                // Details("Date of Birth :", jsonDetails["dateOfBirth"]?? ""),
+                // Details("Gender :", jsonDetails["gender"]?? ""),
+                // Details("Employee_Id :", jsonDetails["EmployeeId"]?? ""),
+                // Details("Designation :", jsonDetails["Designation"]?? ""),
               ],
             ),
           ),
@@ -55,13 +55,17 @@ class _ProfileDetailsState extends State<ProfileDetails> {
       children: [
         Text(
           title,
-          style: TextStyle(color: Colors.black, fontSize: 20),
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20,
+          ),
         ),
         Padding(
           padding: const EdgeInsets.only(left: 10),
           child: Text(
             Value,
             style: TextStyle(color: Colors.black, fontSize: 20),
+            textAlign: TextAlign.center,
           ),
         )
       ],
@@ -70,13 +74,14 @@ class _ProfileDetailsState extends State<ProfileDetails> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     FtechingDataFromJson();
   }
 
   Future<void> FtechingDataFromJson() async {
     String data = await rootBundle.loadString("profile_details.json");
+    jsonDetails = json.decode(data);
+    // print("json result$jsonDetails");
     setState(() {
       jsonDetails = json.decode(data);
     });

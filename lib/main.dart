@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:profile_with_json/profile.dart';
+import 'package:profile_with_json/App_Routes/app_pages.dart';
+import 'package:profile_with_json/App_Routes/app_routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Profile Page',
+      title: 'API',
+      routes: AppPages.routes,
+      initialRoute: AppRoutes.initial,
+
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -25,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: ProfileDetails(),
+      //home: ProfileDetails(),
     );
   }
 }
