@@ -102,7 +102,11 @@ class _ValidateLoginAPIState extends State<ValidateLoginAPI> {
 
     //Response
     try {
-      final _response = await _dioObject.post(requestUrl, data: basicAuth);
+      final _response = await _dioObject.post(requestUrl,
+          data: requestPayLoad,
+          options: Options(headers: {
+            'Authorization': 'Basic Z2NjaW52ZW50b3J5OmdjY2ludmVudG9yeQ=='
+          }));
       print("Response is $_response");
     } on DioError catch (e) {
       if (e.response?.statusCode == 400 || e.response?.statusCode == 500) {
