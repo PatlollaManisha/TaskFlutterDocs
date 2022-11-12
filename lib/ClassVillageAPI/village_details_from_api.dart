@@ -28,8 +28,8 @@ Steps:
 
  */
 
-import 'package:api_application/village_list_item.dart';
-import 'package:api_application/village_model.dart';
+import 'package:api_application/ClassVillageAPI/village_list_item.dart';
+import 'package:api_application/ClassVillageAPI/village_model.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 

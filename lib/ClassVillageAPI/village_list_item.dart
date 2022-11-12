@@ -1,4 +1,4 @@
-import 'package:api_application/village_model.dart';
+import 'package:api_application/ClassVillageAPI/village_model.dart';
 import 'package:flutter/material.dart';
 
 class VillageListItem extends StatelessWidget {
